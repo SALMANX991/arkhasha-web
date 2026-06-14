@@ -297,7 +297,7 @@ export default function Arkhasha() {
 أرجع JSON فقط بدون أي نص أو شرح أو علامات Markdown، بهذا الشكل تماماً:
 [{"name":"اسم المنتج","estPrice":1234,"stores":["نون","جرير"]}]`;
 
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("https://arkhasha-server-production.up.railway.app/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -518,7 +518,7 @@ function DetailView({ product, onBack, onAddOffer, onDeleteOffer, onDeleteProduc
 لكل نتيجة: اسم المتجر، السعر بالريال السعودي، سعر الشحن، أيام التوصيل، حالة المنتج.
 أرجع JSON فقط: [{"store":"","price":0,"shipping":0,"deliveryDays":"2","condition":"جديد","note":""}]
 رتّب من الأرخص للأغلى.`;
-        const res = await fetch("https://api.anthropic.com/v1/messages", {
+        const res = await fetch("https://arkhasha-server-production.up.railway.app/api/ai", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -725,7 +725,7 @@ ${dataSummary()}
 
 أعطِ توصية واضحة (اشترِ الآن / انتظر / السعر جيد أو لا) مع سبب مبني على الأرقام. إذا البيانات قليلة جداً، انصح المستخدم يسجّل أسعار أكثر على مدى أيام عشان التحليل يصير أدق.`;
 
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("https://arkhasha-server-production.up.railway.app/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -804,7 +804,7 @@ function ProductModal({ onClose, onSave }) {
 أرجع JSON فقط بدون أي نص أو شرح أو علامات Markdown:
 {"mainCategory":"","subCategory":"","brand":"","series":"","model":"","variant":"","priceTier":"","releaseYear":"","demand":"","similar":["",""]}
 الحقول غير المعروفة اتركها نصاً فارغاً "".`;
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("https://arkhasha-server-production.up.railway.app/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
